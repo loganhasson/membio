@@ -32,6 +32,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'json'
+gem 'twilio-ruby'
+gem 'sidekiq'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
