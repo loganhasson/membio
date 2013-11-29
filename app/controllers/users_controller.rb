@@ -31,6 +31,10 @@ class UsersController < ApplicationController
     end
   end
 
+  # TODO write route to allow people to confirm later
+  # def confirm_later
+  # end
+  
   private
 
     def user_params

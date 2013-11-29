@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
     end
 
     def sanitize_phone_number
-      self.phone_number = phone_number.gsub(/[^0-9]+/,'') if phone_number
+      self.phone_number = phone_number.gsub(/^(\+1)|[^0-9]+/,'') if phone_number
     end
 
 end
