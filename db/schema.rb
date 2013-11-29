@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131129000918) do
+ActiveRecord::Schema.define(version: 20131129005938) do
 
   create_table "items", force: true do |t|
     t.integer  "list_id"
@@ -29,11 +29,11 @@ ActiveRecord::Schema.define(version: 20131129000918) do
   end
 
   create_table "users", force: true do |t|
-    t.integer  "phone_number"
-    t.integer  "confirmation_number"
+    t.string   "phone_number"
+    t.integer  "confirmation_code"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "confirmed"
+    t.boolean  "confirmed",         default: false
   end
 
 end

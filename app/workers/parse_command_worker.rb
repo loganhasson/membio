@@ -4,5 +4,4 @@ class ParseCommandWorker
 
   def perform(arguments)
   end
-
 end

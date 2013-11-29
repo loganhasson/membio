@@ -1,6 +1,6 @@
 class TextMessage
 
-  # USAGE: TextMessage.new(phone_number).invitation(name, url).deliver
+  # USAGE: TextMessage.new(phone_number).invitation(confirmation_code).deliver
   def initialize(to)
     client = Twilio::REST::Client.new(TWILIO_SID, TWILIO_AUTH_TOKEN)
     @to = to
@@ -8,8 +8,8 @@ class TextMessage
     @account = client.account
   end
 
-  def invitation(name,url)
-    @body = "Ho, ho, ho! Send me your wishlist, #{name}: #{url}\n-Santa"
+  def confirmation_code(confirmation_code)
+    @body = "Thanks for signing up for membio! Here's your confirmation code: #{confirmation_code}"
     self
   end
 
