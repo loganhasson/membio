@@ -3,7 +3,7 @@ class CompleteListWorker
   sidekiq_options retry: false
 
   def perform(phone_number, body)
-    list_title = body[1..-1]
+    list_title = body[1..-1].downcase
 
     if list = List.where(title: list_title, user: User.find_by(phone_number: phone_number)).first
       if list.destroy

@@ -62,12 +62,12 @@ SMS
         @body << "- #{list.title}\n"
       end
     else
-      @body = "You don't seem to have any lists."
+      @body = "You don't seem to have any lists. Go ahead and make one!"
     end
     self
   end
 
-  def add_to_list(list_title, list_id, found)
+  def update_list(list_title, list_id, found)
     if found
       list = List.find(list_id)
 
@@ -84,9 +84,6 @@ SMS
       @body = "#{list_title} doesn't exist."
     end
     self
-  end
-
-  def remove_from_list
   end
 
   def do_not_understand
