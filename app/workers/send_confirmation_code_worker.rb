@@ -6,7 +6,7 @@ class SendConfirmationCodeWorker
     user = User.find(user_id)
     phone_number = user.phone_number
     confirmation_code = user.confirmation_code
-    TextMessage.new(phone_number).invitation(confirmation_code).deliver
+    TextMessage.new(phone_number).confirmation_code(confirmation_code).deliver
   end
 
 end

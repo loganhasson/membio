@@ -1,6 +1,6 @@
 class TextMessage
 
-  # USAGE: TextMessage.new(phone_number).invitation(confirmation_code).deliver
+  # USAGE: TextMessage.new(phone_number).confirmation_code(confirmation_code).deliver
   def initialize(to)
     client = Twilio::REST::Client.new(TWILIO_SID, TWILIO_AUTH_TOKEN)
     @to = to

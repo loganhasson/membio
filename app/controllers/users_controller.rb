@@ -8,20 +8,33 @@ class UsersController < ApplicationController
     @user = User.new(user_params.merge(:confirmed => false))
 
     if @user.save
+
       SendConfirmationCodeWorker.perform_async(@user.id)
-      render text: "Registered...confirmation code sent!"
+
+      respond_to do |format|
+        format.js { }
+      end
+
     else
       render :new
     end
   end
 
   def confirm
+    @user = User.find(user_params[:id])
+    
+    if @user.confirmation_code == user_params[:confirmation_code].to_i
+      @user.update(:confirmed => true)
+      render text: "Confirmed!"
+    else
+      render partial: 'confirm'
+    end
   end
 
   private
 
     def user_params
-      params.require(:user).permit(:phone_number)
+      params.require(:user).permit(:id, :phone_number, :confirmation_code)
     end
 
 end
