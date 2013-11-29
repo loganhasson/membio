@@ -26,7 +26,6 @@ class UsersController < ApplicationController
     if @user.confirmation_code == user_params[:confirmation_code].to_i
       @user.update(:confirmed => true)
       YouAreConfirmedWorker.perform_async(@user.phone_number)
-
       respond_to do |format|
         format.js { }
       end
