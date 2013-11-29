@@ -22,7 +22,23 @@ class TextMessage
     self
   end
 
-  def display_list
+  def display_list(list_id, found)
+    if found
+      list = List.find(list_id)
+
+      list_items = ""
+      list.items.each do |item|
+        list_items << "- #{item.content}\n"
+      end
+
+      @body = <<-SMS
+#{list.title}:
+#{list_items}
+SMS
+    else
+      @body = "Couldn't find that list."
+    end
+    self
   end
 
   def complete_list
