@@ -1,2 +1,13 @@
-$('body')
-  .html('<%= escape_javascript render(partial: "confirm") %>');
+$(function(){
+  $('body')
+    .html('<%= escape_javascript render(partial: "confirm") %>');
+  
+  $("#confirm_user").submit(function(event){
+    var url = $(this).attr("action");
+
+    $.post(url, $(this).serialize(), function(){});
+
+    event.preventDefault();
+  });
+
+})

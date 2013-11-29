@@ -1,4 +1,4 @@
-<%= form_tag('/confirm', method: :post) do %>
+<%= form_tag('/confirm', method: :post, id: 'confirm_user') do %>
   <%= hidden_field_tag 'user[id]', @user.id %>
   <%= text_field_tag 'user[confirmation_code]' %>
   <%= label_tag 'user[confirmation_code]', 'Confirmation Code' %>

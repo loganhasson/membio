@@ -1,3 +1,7 @@
-$('body')
-  .html('<%= escape_javascript render(text: "Confirmed!") %>');
-//var faye = new Faye.Client('http://localhost:9292/getting-started/faye');
+$(function(){
+  $('body').html('<%= escape_javascript render(text: "Confirmed!") %>');
+  var faye = new Faye.Client('http://localhost:9292/getting-started/faye');
+  faye.subscribe('/getting-started/feed', function (data) {
+    alert(data);
+  });
+})
