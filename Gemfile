@@ -36,6 +36,7 @@ gem 'json'
 gem 'twilio-ruby'
 gem 'sidekiq'
 gem 'figaro'
+gem 'faye'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
