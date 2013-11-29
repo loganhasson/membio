@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Membio::Application.config.secret_key_base = 'ee288f1c119815ff909359480b4ca8ed6a6137d5f186b1d59c2a4466b60eddbaf09d3d4da604b7a198ae760b5c009c0920f99be8ddf2c87f1cc6d00ca3e06b7d'
+Membio::Application.config.secret_key_base = ENV["APPLICATION_SECRET_KEY_BASE"]
