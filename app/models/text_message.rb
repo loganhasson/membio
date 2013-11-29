@@ -22,7 +22,52 @@ class TextMessage
     self
   end
 
-  def display_list(list_id, found)
+  def display_list(list_title, list_id, found)
+    if found
+      list = List.find(list_id)
+
+      list_items = ""
+      list.items.each do |item|
+        list_items << "- #{item.content}\n"
+      end
+
+      if list.items.size < 1
+        @body = "#{list.title} is empty. Go ahead and add to it!"
+      else
+        @body = <<-SMS
+#{list.title}:
+#{list_items}
+SMS
+      end
+    else
+      @body = "#{list_title} doesn't exist."
+    end
+    self
+  end
+
+  def complete_list(list_title, destroyed)
+    if destroyed
+      @body = "Successfully marked #{list_title} as complete."
+    else
+      @body = "There was an error marking #{list_title} as complete. Are you sure it exists?"
+    end
+    self
+  end
+
+  def show_all_lists(phone_number)
+    user = User.find_by(:phone_number => phone_number)
+    if user && user.lists.size > 0
+      @body = "Your Lists:\n"
+      user.lists.each do |list|
+        @body << "- #{list.title}\n"
+      end
+    else
+      @body = "You don't seem to have any lists."
+    end
+    self
+  end
+
+  def add_to_list(list_title, list_id, found)
     if found
       list = List.find(list_id)
 
@@ -32,28 +77,21 @@ class TextMessage
       end
 
       @body = <<-SMS
-#{list.title}:
+Updated list: #{list.title}
 #{list_items}
 SMS
     else
-      @body = "Couldn't find that list."
+      @body = "#{list_title} doesn't exist."
     end
     self
-  end
-
-  def complete_list
-  end
-
-  def show_all_lists
-  end
-
-  def add_to_list
   end
 
   def remove_from_list
   end
 
   def do_not_understand
+    @body = "Sorry, I don't understand."
+    self
   end
 
   def deliver
