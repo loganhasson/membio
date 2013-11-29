@@ -3,6 +3,7 @@ class ParseMessageWorker
   sidekiq_options retry: false
 
   def perform(phone_number, body)
+    # TODO check for user registration and confirmation first
     case body[0]
     when "@"
       CreateNewListWorker.perform_async(phone_number, body)

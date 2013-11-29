@@ -13,7 +13,13 @@ class TextMessage
     self
   end
 
-  def create_new_list
+  def create_new_list(list_title, message, success)
+    if success == true
+      @body = "#{message}: #{list_title}"
+    else
+      @body = "#{message}: #{list_title}. Please try again."
+    end
+    self
   end
 
   def display_list
