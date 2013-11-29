@@ -1,4 +1,14 @@
-<%= form_for @user do |f| %>
-  <%= f.text_field :phone_number %>
-  <%= f.submit "Register" %>
-<% end %>
+<div class="well new-user-well col-lg-4 col-lg-offset-4">
+  <p>
+    Membio is a simple way to keep track of all the stuff you need to do via text message.
+  </p>
+  <%= form_for @user do |f| %>
+    <div class="input-group input-group-lg col-lg-12">
+      <span class="input-group-addon"><div class="glyphicon glyphicon-earphone"></div></span>
+      <%= f.text_field :phone_number, class: "form-control", placeholder: "555-555-5555" %>
+    </div>
+    <div class="new-user-button input-group input-group-lg col-lg-12">
+      <%= f.submit "Get Started", class: "btn btn-info btn-lg btn-block" %>
+    </div>
+  <% end %>
+</div>
