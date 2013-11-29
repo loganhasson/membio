@@ -1,6 +1,5 @@
 class TextMessage
 
-  # USAGE: TextMessage.new(phone_number).confirmation_code(confirmation_code).deliver
   def initialize(to)
     client = Twilio::REST::Client.new(TWILIO_SID, TWILIO_AUTH_TOKEN)
     @to = to
@@ -87,11 +86,41 @@ SMS
   end
 
   def do_not_understand
-    @body = "Sorry, I don't understand."
+    @body = "Sorry, I don't understand. If you need help, reply with '?'"
+    self
+  end
+
+  def show_help
+    @body = <<-HELP
+How membio works:
+- New: @Listname
+- Add: Listname+item, item
+- Remove: Listname-item
+- View: #Listname
+- Complete: !Listname
+- All: *
+- Help: ?
+HELP
+    self
+  end
+
+  def non_existent_user
+    @body = "It looks like you don't have a membio account yet! Go sign up at: #{URL}"
+    self
+  end
+
+  def non_confirmed_user(confirmation_code)
+    @body = "It seems like you haven't confirmed your account yet! Your confirmation code is: #{confirmation_code}. Enter it at: confirmation_link_here"
+    self
+  end
+
+  def you_are_confirmed
+    @body = "Your account is confirmed and all ready to go! If you need help getting started, reply with '?'"
     self
   end
 
   def deliver
+    # TODO deal with messages over 150 chars
     @account.sms.messages.create({from: @from, to: @to, body: @body})
   end
 

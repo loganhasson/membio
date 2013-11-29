@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_many :lists
+  has_many :lists, dependent: :destroy
   validates :phone_number, uniqueness: true,
                            length: { minimum: 10, maximum: 10 }
 
@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
     "+1#{self.phone_number}"
   end
 
+  def confirmed?
+    self.confirmed
+  end
 
   private
 
