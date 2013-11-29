@@ -1,7 +1,9 @@
-class ParseCommandWorker
+class AddToListWorker
   include Sidekiq::Worker
   sidekiq_options retry: false
 
-  def perform(arguments)
+  def perform(phone_number, body)
+
   end
+
 end

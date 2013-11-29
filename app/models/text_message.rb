@@ -13,6 +13,27 @@ class TextMessage
     self
   end
 
+  def create_new_list
+  end
+
+  def display_list
+  end
+
+  def complete_list
+  end
+
+  def show_all_lists
+  end
+
+  def add_to_list
+  end
+
+  def remove_from_list
+  end
+
+  def do_not_understand
+  end
+
   def deliver
     @account.sms.messages.create({from: @from, to: @to, body: @body})
   end
