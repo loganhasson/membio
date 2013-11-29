@@ -2,6 +2,9 @@ $(function(){
   $('body').html('<%= escape_javascript render(text: "Confirmed!") %>');
   var faye = new Faye.Client('http://localhost:9292/getting-started/faye');
   faye.subscribe('/getting-started/feed', function (data) {
-    alert(data);
+    var obj = eval("(" + data + ")");
+    var userPhone = obj.phone_number;
+    var textBody = obj.body;
+    $('body').prepend('User Phone: ' + userPhone + ' --- Text Body: ' + textBody);
   });
 })

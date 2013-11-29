@@ -8,6 +8,8 @@ class ParseMessageWorker
     elsif !User.find_by(:phone_number => phone_number).confirmed?
       NonConfirmedUserWorker.perform_async(phone_number)
     else
+      FeedBroadcastWorker.perform_async(phone_number, body)
+
       case body[0]
       when "@"
         CreateNewListWorker.perform_async(phone_number, body)
