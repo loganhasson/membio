@@ -1,10 +1,10 @@
 $(function(){
-  $('body').html('<%= escape_javascript render(partial: "getting_started") %>');
+  $('body').html('<%= escape_javascript render(partial: "step1") %>');
   
   var userPhoneNumber = $('#phone_number').text();
   
   var faye = new Faye.Client('http://localhost:9292/getting-started/faye');
-  
+  var step = 1;
   faye.subscribe('/getting-started/feed', function (data) {
     
     var obj = eval("(" + data + ")");
@@ -12,7 +12,31 @@ $(function(){
     var textBody = obj.body;
 
     if (phoneNumber === userPhoneNumber) {
-      $('body').prepend('User Phone: ' + phoneNumber + ' --- Text Body: ' + textBody);
+      if (step === 1 && textBody === '@groceries') {
+        $('body').html('<%= escape_javascript render(partial: "step2") %>');
+        step = step+1;   
+      } else if (step === 2 && textBody === 'groceries+bananas, grapes, cereal') {
+        $('body').html('<%= escape_javascript render(partial: "step3") %>');
+        step = step+1;
+      } else if (step === 3 && textBody === 'groceries-bananas') {
+        $('body').html('<%= escape_javascript render(partial: "step4") %>');
+        step = step+1;
+      } else if (step === 4 && textBody === '#groceries') {
+        $('body').html('<%= escape_javascript render(partial: "step5") %>');
+        step = step+1;
+      } else if (step === 5 && textBody === '@todo+walk the dog') {
+        $('body').html('<%= escape_javascript render(partial: "step6") %>');
+        step = step+1;
+      } else if (step === 6 && textBody === '*') {
+        $('body').html('<%= escape_javascript render(partial: "step7") %>');
+        step = step+1;
+      } else if (step === 7 && textBody === '!groceries') {
+        $('body').html('<%= escape_javascript render(partial: "step8") %>');
+        step = step+1;
+      } else if (step === 8 && textBody === '?') {
+        $('body').html('<%= escape_javascript render(partial: "step9") %>');
+        step = step+1;
+      };
     };
 
   });
