@@ -6,16 +6,15 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params.merge(:confirmed => false))
-
     if @user.save
 
       SendConfirmationCodeWorker.perform_async(@user.id)
-
       respond_to do |format|
         format.js { }
       end
 
     else
+      cookies[:error] = @user.errors.full_messages.first
       render :new
     end
   end

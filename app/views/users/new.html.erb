@@ -1,3 +1,11 @@
+<div class="col-lg-4 col-lg-offset-4" style="z-index: 1;">
+  <div id="logo"></div>
+</div>
+
+<div id="subtext" class="col-lg-4 col-lg-offset-4">
+  <h2>simple to-do lists via sms</h2>
+</div>
+<div id="error" class="alert alert-danger col-lg-3 col-lg-offset-4"></div>
 <div class="new-user-well">
   <div class="container eternity-form">
     <div class="forgot-password-section animated fadeInUp">
@@ -9,7 +17,7 @@
           <div class="textbox-wrap">
             <div class="input-group input-group-lg col-lg-12">
               <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-              <%= f.text_field :phone_number, class: "form-control", placeholder: "555-555-5555", autocomplete: :off, required: "required" %>
+              <%= f.text_field :phone_number, class: "form-control", placeholder: "555-555-5555", autocomplete: :off, required: "required", id: "text-input" %>
             </div>
           </div>
           <div class="forget-form-action clearfix">

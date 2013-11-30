@@ -26,7 +26,7 @@
 }
 
 .new-user-well {
-  margin-top: 5%;
+  margin-top: 13%;
 }
 
 .new-user-well p {
@@ -40,6 +40,11 @@
 
 .steps-well {
   margin-top: 5%;
+}
+
+p {
+  color: rgb(70, 97, 184);
+  font-size: 1.2em;
 }
 
 body {
@@ -101,3 +106,42 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }*/
+
+#logo {
+  position: absolute;
+  top: 10px;
+  background-image: url('membio-logo.png');
+  /*-webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  transform: rotate(-10deg);*/
+  background-size: 100%;
+  width: 448px;
+  height: 89px;
+}
+
+#subtext {
+  position: absolute;
+  text-align: center;
+  text-shadow: 1px 1px 4px #333;
+  top: 135px;
+  color: white;
+}
+
+.section-title {
+  border-radius: 5px;
+}
+
+.forgot-password-section.animated.fadeInUp {
+  box-shadow: 2px 4px 6px #555;
+  border-radius: 5px;
+  margin-top: 40px;
+}
+
+#error {
+  position: absolute;
+  top: 200px;
+  left: 60px;
+  text-align: center;
+}

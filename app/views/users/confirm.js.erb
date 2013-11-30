@@ -1,7 +1,7 @@
 $(function(){
   
-  $('body').fadeOut("fast", function(){
-    $('body').html('<%= escape_javascript render(partial: "step1") %>').hide().fadeIn("fast");
+  $('.outside-container').fadeOut("fast", function(){
+    $('.outside-container').html('<%= escape_javascript render(partial: "step1") %>').hide().fadeIn("fast");
 
     var userPhoneNumber = $('#phone_number').text();
     
@@ -15,43 +15,43 @@ $(function(){
 
       if (phoneNumber === userPhoneNumber) {
         if (step === 1 && (textBody === '@groceries' || textBody === '@Groceries')) {
-          $('body').fadeOut("fast", function(){
-            $('body').html('<%= escape_javascript render(partial: "step2") %>').hide().fadeIn("fast");
+          $('.outside-container').fadeOut("fast", function(){
+            $('.outside-container').html('<%= escape_javascript render(partial: "step2") %>').hide().fadeIn("fast");
             step = step+1;   
           });
         } else if (step === 2 && (textBody === 'groceries+bananas, grapes, cereal' || textBody === 'Groceries+bananas, grapes, cereal')) {
-          $('body').fadeOut("fast", function(){
-            $('body').html('<%= escape_javascript render(partial: "step3") %>').hide().fadeIn("fast");
+          $('.outside-container').fadeOut("fast", function(){
+            $('.outside-container').html('<%= escape_javascript render(partial: "step3") %>').hide().fadeIn("fast");
             step = step+1;   
           });
         } else if (step === 3 && (textBody === 'groceries-bananas' || textBody === 'Groceries-bananas')) {
-          $('body').fadeOut("fast", function(){
-            $('body').html('<%= escape_javascript render(partial: "step4") %>').hide().fadeIn("fast");
+          $('.outside-container').fadeOut("fast", function(){
+            $('.outside-container').html('<%= escape_javascript render(partial: "step4") %>').hide().fadeIn("fast");
             step = step+1;   
           });
         } else if (step === 4 && (textBody === '#groceries' || textBody === '#Groceries')) {
-          $('body').fadeOut("fast", function(){
-            $('body').html('<%= escape_javascript render(partial: "step5") %>').hide().fadeIn("fast");
+          $('.outside-container').fadeOut("fast", function(){
+            $('.outside-container').html('<%= escape_javascript render(partial: "step5") %>').hide().fadeIn("fast");
             step = step+1;   
           });
         } else if (step === 5 && (textBody === '@todo+walk the dog' || textBody === '@Todo+walk the dog')) {
-          $('body').fadeOut("fast", function(){
-            $('body').html('<%= escape_javascript render(partial: "step6") %>').hide().fadeIn("fast");
+          $('.outside-container').fadeOut("fast", function(){
+            $('.outside-container').html('<%= escape_javascript render(partial: "step6") %>').hide().fadeIn("fast");
             step = step+1;   
           });
         } else if (step === 6 && textBody === '*') {
-          $('body').fadeOut("fast", function(){
-            $('body').html('<%= escape_javascript render(partial: "step7") %>').hide().fadeIn("fast");
+          $('.outside-container').fadeOut("fast", function(){
+            $('.outside-container').html('<%= escape_javascript render(partial: "step7") %>').hide().fadeIn("fast");
             step = step+1;   
           });
         } else if (step === 7 && (textBody === '!groceries' || textBody === '!Groceries')) {
-          $('body').fadeOut("fast", function(){
-            $('body').html('<%= escape_javascript render(partial: "step8") %>').hide().fadeIn("fast");
+          $('.outside-container').fadeOut("fast", function(){
+            $('.outside-container').html('<%= escape_javascript render(partial: "step8") %>').hide().fadeIn("fast");
             step = step+1;   
           });
         } else if (step === 8 && textBody === '?') {
-          $('body').fadeOut("fast", function(){
-            $('body').html('<%= escape_javascript render(partial: "step9") %>').hide().fadeIn("fast");
+          $('.outside-container').fadeOut("fast", function(){
+            $('.outside-container').html('<%= escape_javascript render(partial: "step9") %>').hide().fadeIn("fast");
             step = step+1;   
           });
         };
