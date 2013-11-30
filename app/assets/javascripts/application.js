@@ -16,6 +16,7 @@
 //= require jquery-1.9.1.min
 //= require jquery-1.9.1.intellisense
 //= require jquery.icheck.min
+//= require jquery.transit.min
 //= require modernizr
 //= require placeholders.min
 //= require respond.min
