@@ -12,5 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= bootstrap.min
+//= require bootstrap.min
+//= require jquery-1.9.1.min
+//= require jquery-1.9.1.intellisense
+//= require jquery.icheck.min
+//= require modernizr
+//= require placeholders.min
+//= require respond.min
 //= require_tree .

@@ -9,6 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require bootstrap.min
+ *= require animate.min
+ *= require font-awesome.min
+ *= require forms
  *= require_self
  *= require_tree .
  */
@@ -26,11 +29,11 @@
   margin-top: 5%;
 }
 
-.confirm-user-well {
-  margin-top: 5%;
+.new-user-well p {
+  text-align: center;
 }
 
-.new-user-button {
+.confirm-user-well {
   margin-top: 5%;
 }
 
@@ -41,3 +44,63 @@
 .steps-well {
   margin-top: 5%;
 }
+
+body {
+  background-color: #3498db;
+  background-image: -ms-radial-gradient(center top, circle farthest-side, #8bc4ea 0%, #3498db 100%);
+  background-image: -moz-radial-gradient(center top, circle farthest-side, #8bc4ea 0%, #3498db 100%);
+  background-image: -o-radial-gradient(center top, circle farthest-side, #8bc4ea 0%, #3498db 100%);
+  background-image: -webkit-gradient(radial, center top, 0, center top, 487, color-stop(0, #8bc4ea), color-stop(1, #3498db));
+  background-image: -webkit-radial-gradient(center top, circle farthest-side, #8bc4ea 0%, #3498db 100%);
+  background-image: radial-gradient(circle farthest-side at center top, #8bc4ea 0%, #3498db 100%);
+  padding: 50px 0;
+  min-height: 100%;
+  overflow: hidden;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  position: relative;
+  -o-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  background-repeat: no-repeat;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/*body {
+  background-color: #95a5a6;
+  background-image: -ms-radial-gradient(center top, circle farthest-side, #ccd4d5 0%, #95a5a6 100%);
+  background-image: -moz-radial-gradient(center top, circle farthest-side, #ccd4d5 0%, #95a5a6 100%);
+  background-image: -o-radial-gradient(center top, circle farthest-side, #ccd4d5 0%, #95a5a6 100%);
+  background-image: -webkit-gradient(radial, center top, 0, center top, 487, color-stop(0, #ccd4d5), color-stop(1, #95a5a6));
+  background-image: -webkit-radial-gradient(center top, circle farthest-side, #ccd4d5 0%, #95a5a6 100%);
+  background-image: radial-gradient(circle farthest-side at center top, #ccd4d5 0%, #95a5a6 100%);
+  padding: 50px 0;
+  min-height: 100%;
+  overflow: hidden;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  position: relative;
+  -o-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  background-repeat: no-repeat;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+}*/
