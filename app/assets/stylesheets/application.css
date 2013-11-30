@@ -34,6 +34,24 @@
   text-align: center;
 }
 
+.getting-started-well {
+  margin-top: 16%;
+}
+
+p {
+  color: rgb(70, 97, 184);
+  font-size: 1.2em;
+}
+
+.getting-started-well p {
+  margin-top: 4%;
+  text-align: center;
+}
+
+.getting-started-well h3 {
+  text-align: center;
+}
+
 .confirm-user-well {
   margin-top: 5%;
 }
@@ -42,10 +60,6 @@
   margin-top: 5%;
 }
 
-p {
-  color: rgb(70, 97, 184);
-  font-size: 1.2em;
-}
 
 body {
   background-color: #3498db;
@@ -133,10 +147,19 @@ body {
   border-radius: 5px;
 }
 
+.section-title h3 {
+  color: black;
+}
+
 .forgot-password-section.animated.fadeInUp {
   box-shadow: 2px 4px 6px #555;
   border-radius: 5px;
   margin-top: 40px;
+}
+
+.forgot-password-section.animated.bounceInRight {
+  box-shadow: 2px 4px 6px #555;
+  border-radius: 5px;
 }
 
 #error {
@@ -144,4 +167,14 @@ body {
   top: 200px;
   left: 60px;
   text-align: center;
+}
+
+p.logan-signature {
+  -webkit-transform: rotate(-15deg);
+  -moz-transform: rotate(-15deg);
+  -ms-transform: rotate(-15deg);
+  -o-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+  text-align: right;
+  margin-top: 50px;
 }
