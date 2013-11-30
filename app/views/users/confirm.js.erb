@@ -1,5 +1,6 @@
 $(function(){
   
+  $('#error').fadeOut("fast");
   $('.outside-container').fadeOut("fast", function(){
     $('.outside-container').html('<%= escape_javascript render(partial: "step1") %>').hide().fadeIn("fast");
 
