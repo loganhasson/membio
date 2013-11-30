@@ -1,16 +1,25 @@
-<div class="well confirm-user-well col-lg-4 col-lg-offset-4">
-  <p>
-    You're almost set to go! You should receive a text with a confirmation code in the next minute or so.
-    When you do, enter it below to continue.
-  </p>
-  <%= form_tag('/confirm', method: :post, id: 'confirm_user') do %>
-    <%= hidden_field_tag 'user[id]', @user.id %>
-    <div class="input-group input-group-lg col-lg-12">
-      <span class="input-group-addon"><div class="glyphicon glyphicon-ok"></div></span>
-        <%= text_field_tag 'user[confirmation_code]', nil, class: "form-control", placeholder: "123456", autocomplete: :off %>
+<div class="new-user-well">
+  <div class="container eternity-form">
+    <div class="forgot-password-section animated fadeIn">
+      <div class="section-title">
+        <p>Enter your phone number to get started.</p>
+      </div>
+      <div class="forgot-content">
+        <%= form_tag('/confirm', method: :post, id: 'confirm_user') do %>
+          <%= hidden_field_tag 'user[id]', @user.id %>
+          <div class="textbox-wrap">
+            <div class="input-group input-group-lg col-lg-12">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-ok"></i></span>
+                <%= text_field_tag 'user[confirmation_code]', nil, class: "form-control", placeholder: "123456", autocomplete: :off, required: "required" %>
+            </div>
+          </div>
+          <div class="forget-form-action clearfix">
+            <div class="new-user-button input-group input-group-lg col-lg-12">
+              <%= submit_tag "Confirm", class: "btn btn-success btn-lg btn-block green-btn" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div class="confirm-user-button input-group input-group-lg col-lg-12">
-      <%= submit_tag "Confirm", class: "btn btn-succcess btn-lg btn-block" %>
-    </div>
-  <% end %>
+  </div>
 </div>
