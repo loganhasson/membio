@@ -38,8 +38,8 @@ gem 'sidekiq'
 gem 'figaro'
 gem 'faye'
 gem 'capistrano', '2.15.5'
-gem 'rvm-capistrano'
-gem 'sinatra', require: false
+# gem 'rvm-capistrano'
+# gem 'sinatra', require: false
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
