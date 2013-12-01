@@ -41,12 +41,12 @@ before "deploy:restart", "deploy:symlink_database", "deploy:symlink_api_credenti
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
   task :symlink_database, :roles => :app do
-    # run "ln -nfs #{shared_path}/production.sqlite3 #{current_path}/db/production.sqlite3"
+    run "ln -nfs #{shared_path}/production.sqlite3 #{current_path}/db/production.sqlite3"
   end
 
   task :symlink_api_credentials, :roles => :app do
-    # run "ln -nfs #{shared_path}/application.yml #{current_path}/config/application.yml"
-    # run "ln -nfs #{shared_path}/faye_token.rb #{current_path}/config/initializers/faye_token.rb"
+    run "ln -nfs #{shared_path}/application.yml #{current_path}/config/application.yml"
+    run "ln -nfs #{shared_path}/faye_token.rb #{current_path}/config/initializers/faye_token.rb"
   end
 
   task :migrate, :roles => :app do 
