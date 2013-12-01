@@ -38,6 +38,7 @@ gem 'sidekiq'
 gem 'figaro'
 gem 'faye'
 gem 'capistrano', '2.15.5'
+gem 'therubyracer'
 # gem 'rvm-capistrano'
 # gem 'sinatra', require: false
 
