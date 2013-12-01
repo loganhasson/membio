@@ -1,5 +1,5 @@
 require 'bundler/capistrano' # for bundler support
-require 'rvm/capistrano'
+# require 'rvm/capistrano'
 require 'sidekiq/capistrano'
 
 set(:sidekiq_cmd) { "bundle exec sidekiq" }
@@ -27,7 +27,7 @@ default_run_options[:pty] = true
 
 set :rvm_type, :system
 
-set :server_ip, '162.243.250.39' # This should be your server IP
+set :server_ip, '162.243.247.233' # This should be your server IP
 role :web, "#{server_ip}"                          # Your HTTP server, Apache/etc
 role :app, "#{server_ip}"                          # This may be the same as your `Web` server
 role :db,  "#{server_ip}", :primary => true        # This is where Rails migrations will run
