@@ -171,14 +171,14 @@ body {
 }
 
 p.logan-signature {
-  -webkit-transform: rotate(-15deg);
+  /*-webkit-transform: rotate(-15deg);
   -moz-transform: rotate(-15deg);
   -ms-transform: rotate(-15deg);
   -o-transform: rotate(-15deg);
-  transform: rotate(-15deg);
+  transform: rotate(-15deg);*/
   text-align: right;
-  margin-top: 50px;
-  margin-right: 45px;
+  /*margin-top: 50px;*/
+  margin-right: 15px;
 }
 
 .btn {

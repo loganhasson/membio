@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
     "+1#{self.phone_number}"
   end
 
+  def hashed_phone_number
+    Digest::SHA1.hexdigest(self.phone_number)
+  end
+
   def confirmed?
     self.confirmed
   end
