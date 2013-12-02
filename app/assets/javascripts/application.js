@@ -12,9 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap.min
-//= require jquery-1.9.1.min
 //= require jquery-1.9.1.intellisense
+//= require bootstrap.min
 //= require jquery.icheck.min
 //= require jquery.transit.min
 //= require modernizr
