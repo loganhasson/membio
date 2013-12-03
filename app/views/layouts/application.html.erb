@@ -9,6 +9,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render partial: 'logo' %>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -29,7 +30,6 @@
     }(document, 'script'));
 </script>
 
-</body>
 <footer>
   <div id="footer-text">made with ♥ by <a href="https://twitter.com/loganhasson" target="_blank">@loganhasson</a> in nyc.</div>
   <div id="social-share">
@@ -49,4 +49,6 @@
 
 </div>
 </footer>
+<%= GOOGLE_ANALYTICS.html_safe if Rails.env.production? %>
+</body>
 </html>
