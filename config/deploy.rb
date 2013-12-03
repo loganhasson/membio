@@ -33,7 +33,7 @@ role :app, "#{server_ip}"                          # This may be the same as you
 role :db,  "#{server_ip}", :primary => true        # This is where Rails migrations will run
 
 # if you want to clean up old releases on each deploy uncomment this:
-before "deploy:restart", "deploy:symlink_database", "deploy:symlink_api_credentials", "faye:stop"
+before "deploy:restart", "deploy:symlink_database", "deploy:symlink_api_credentials"
 
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
@@ -77,8 +77,13 @@ namespace :faye do
   task :stop do
     run "kill `cat #{faye_pid}` || true"
   end
+  desc "Restart Faye"
+  task :restart do
+    run "kill `cat #{faye_pid}` || true"
+    run "cd #{release_path} && rackup faye.ru -s thin -E production -D --pid #{faye_pid}"
+  end
 end
 
 
-after "deploy:finalize_update", "deploy:symlink_database", "faye:start"
-before "deploy:restart", "deploy:bootstrap", "faye:stop"
+after "deploy:finalize_update", "deploy:symlink_database"
+before "deploy:restart", "deploy:bootstrap", "faye:restart"
