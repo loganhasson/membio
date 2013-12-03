@@ -6,7 +6,7 @@ $(function(){
 
     var userPhoneNumber = $('#phone_number').text();
     
-    var faye = new Faye.Client('http://localhost:9292/getting-started/faye');
+    var faye = new Faye.Client('http://<%= SERVER_IP %>:9292/getting-started/faye');
     var step = 1;
     faye.subscribe('/getting-started/feed', function (data) {
       
