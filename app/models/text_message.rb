@@ -94,7 +94,7 @@ SMS
     @body = <<-HELP
 How membio works:
 - New: @Listname
-- Add: Listname+item, item
+- Add: Listname+item1, item2...
 - Remove: Listname-item
 - View: #Listname
 - Complete: !Listname
