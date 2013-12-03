@@ -122,8 +122,9 @@ body {
 }*/
 
 #logo {
-  position: absolute;
+  /*position: absolute;*/
   top: 10px;
+  margin: auto;
   background-image: image-url('membio-logo.png');
   /*-webkit-transform: rotate(-10deg);
   -moz-transform: rotate(-10deg);
@@ -136,10 +137,11 @@ body {
 }
 
 #subtext {
-  position: absolute;
+  /*position: absolute;*/
   text-align: center;
   text-shadow: 1px 1px 4px #333;
-  top: 135px;
+  margin-top: -8px;
+  /*top: 135px;*/
   color: white;
 }
 

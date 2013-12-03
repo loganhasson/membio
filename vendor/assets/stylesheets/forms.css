@@ -52,7 +52,7 @@
 /* HERE */
 .eternity-form .textbox-wrap {
   padding: 20px 20px 20px 15px;
-  border-left: 5px solid transparent;
+  /*border-left: 5px solid transparent;*/
   -moz-transition: border-left-color 0.5s, box-shadow 0.5s, background-color 0.5s;
   -o-transition: border-left-color 0.5s, box-shadow 0.5s, background-color 0.5s;
   -webkit-transition: border-left-color 0.5s, box-shadow 0.5s, background-color 0.5s;
