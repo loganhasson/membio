@@ -81,4 +81,4 @@ end
 
 
 after "deploy:finalize_update", "deploy:symlink_database", "faye:start"
-before "deploy:restart", "deploy:bootstrap"
+before "deploy:restart", "deploy:bootstrap", "faye:stop"
