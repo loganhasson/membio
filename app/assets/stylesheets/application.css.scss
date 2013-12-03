@@ -60,6 +60,14 @@ p {
   margin-top: 5%;
 }
 
+footer {
+  text-align: center;
+  margin-top: 15%;
+}
+
+#footer-text {
+  margin-bottom: 5px;
+}
 
 body {
   background-color: #3498db;
@@ -136,6 +144,29 @@ body {
   height: 89px;
 }
 
+/*#social-share {
+  position: absolute;
+  right: 2%;
+  top: 2%;
+}*/
+
+#twitter {
+  margin-right: -25px;
+}
+
+#hacker-news {
+  margin-left: 5px;
+}
+
+#reddit img{
+  margin-left: 5px;
+  margin-top: -14px;
+}
+
+/*.hn_bt {
+  margin-top: 1px !important;
+}*/
+
 #subtext {
   /*position: absolute;*/
   text-align: center;
@@ -170,6 +201,10 @@ body {
   left: 60px;
   text-align: center;
   border-radius: 5px;
+}
+
+footer a {
+  color: lavender;
 }
 
 p.logan-signature {
