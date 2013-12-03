@@ -8,7 +8,7 @@ set(:sidekiq_timeout) { 10 }
 set(:sidekiq_role) { :app }
 set(:sidekiq_pid) { "#{current_path}/tmp/pids/sidekiq.pid" }
 set(:sidekiq_processes) { 1 }
-
+set(:faye_pid) { "#{current_path}/tmp/pids/faye.pid" }
 
 set :application, "membio" # This should mirror what you put in your NGinx Conf
 
@@ -33,7 +33,7 @@ role :app, "#{server_ip}"                          # This may be the same as you
 role :db,  "#{server_ip}", :primary => true        # This is where Rails migrations will run
 
 # if you want to clean up old releases on each deploy uncomment this:
-before "deploy:restart", "deploy:symlink_database", "deploy:symlink_api_credentials"
+before "deploy:restart", "deploy:symlink_database", "deploy:symlink_api_credentials", "faye:stop"
 
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
@@ -68,6 +68,17 @@ namespace :deploy do
   end
 end
 
+namespace :faye do
+  desc "Start Faye"
+  task :start do
+    run "cd #{release_path} && rackup faye.ru -s thin -E production -D --pid #{faye_pid}"
+  end
+  desc "Stop Faye"
+  task :stop do
+    run "kill `cat #{faye_pid}` || true"
+  end
+end
 
-after "deploy:finalize_update", "deploy:symlink_database"
+
+after "deploy:finalize_update", "deploy:symlink_database", "faye:start"
 before "deploy:restart", "deploy:bootstrap"
