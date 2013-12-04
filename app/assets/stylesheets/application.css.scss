@@ -25,6 +25,10 @@
        asset-url('glyphicons-halflings-regular.svg') format('svg');
 }
 
+.section-title a {
+  color: lightslategray;
+}
+
 .new-user-well {
   margin-top: 13%;
 }
@@ -61,8 +65,18 @@ p {
 }
 
 footer {
+  position: absolute;
+  bottom: 5%;
+  right: 25%;
+  left: 25%;
   text-align: center;
-  margin-top: 15%;
+}
+
+html{
+  height: 100%;
+}
+body {
+  min-height: 100%;
 }
 
 #footer-text {

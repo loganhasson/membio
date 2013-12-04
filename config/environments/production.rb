@@ -80,4 +80,4 @@ Membio::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 end
 
-SERVER_IP = '162.243.247.233'
+SERVER_IP = ENV['PRODUCTION_IP']
