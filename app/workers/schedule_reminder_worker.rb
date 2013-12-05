@@ -14,7 +14,7 @@ class ScheduleReminderWorker
       list_exists = true
     elsif user
       item_ids = user.lists.map {|list| list.id}.flatten
-      if item = Item.where('list_id IN ?', item_ids).where(:content => list_title_or_item)
+      if item = Item.where('list_id IN ?', item_ids).where(:content => list_title_or_item).first
         item_exists = true
       end
     else
