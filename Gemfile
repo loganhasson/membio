@@ -39,6 +39,7 @@ gem 'figaro'
 gem 'faye'
 gem 'capistrano', '2.15.5'
 gem 'therubyracer'
+gem 'chronic'
 # gem 'rvm-capistrano'
 # gem 'sinatra', require: false
 
