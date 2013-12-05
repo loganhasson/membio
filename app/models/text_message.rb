@@ -119,6 +119,11 @@ HELP
     self
   end
 
+  def reminder_message(reminder_body)
+    @body = body
+    self
+  end
+
   def deliver
     # TODO deal with messages over 150 chars
     @account.sms.messages.create({from: @from, to: @to, body: @body})

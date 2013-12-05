@@ -17,6 +17,8 @@ class ParseMessageWorker
         DisplayListWorker.perform_async(phone_number, body)
       when "!"
         CompleteListWorker.perform_async(phone_number, body)
+      when "&"
+        ScheduleReminderWorker.perform_async(phone_number, body)
       when "*"
         ShowAllListsWorker.perform_async(phone_number)
       when "?"
