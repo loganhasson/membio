@@ -12,7 +12,7 @@ class ListReminderWorker
       end
       body = <<-SMS
 REMINDER
-#{list_title}:
+#{title}:
 #{list_items}
 SMS
       DelayMessageSendWorker.perform_at(parsed_time, phone_number, body)
