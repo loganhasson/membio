@@ -120,7 +120,7 @@ HELP
   end
 
   def reminder_message(reminder_body)
-    @body = body
+    @body = reminder_body
     self
   end
 
